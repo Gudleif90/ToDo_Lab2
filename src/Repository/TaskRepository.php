@@ -7,22 +7,22 @@ use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\Persistence\ManagerRegistry;
 
 /**
- * @extends ServiceEntityRepository<Taskv2>
+ * @extends ServiceEntityRepository<Task>
  *
- * @method Taskv2|null find($id, $lockMode = null, $lockVersion = null)
- * @method Taskv2|null findOneBy(array $criteria, array $orderBy = null)
- * @method Taskv2[]    findAll()
- * @method Taskv2[]    findBy(array $criteria, array $orderBy = null, $limit = null, $offset = null)
+ * @method Task|null find($id, $lockMode = null, $lockVersion = null)
+ * @method Task|null findOneBy(array $criteria, array $orderBy = null)
+ * @method Task[]    findAll()
+ * @method Task[]    findBy(array $criteria, array $orderBy = null, $limit = null, $offset = null)
  */
-class Taskv2Repository extends ServiceEntityRepository
+class TaskRepository extends ServiceEntityRepository
 {
     public function __construct(ManagerRegistry $registry)
     {
-        parent::__construct($registry, Taskv2::class);
+        parent::__construct($registry, Task::class);
     }
 
 //    /**
-//     * @return Taskv2[] Returns an array of Taskv2 objects
+//     * @return Task[] Returns an array of Task objects
 //     */
 //    public function findByExampleField($value): array
 //    {
@@ -36,7 +36,7 @@ class Taskv2Repository extends ServiceEntityRepository
 //        ;
 //    }
 
-//    public function findOneBySomeField($value): ?Taskv2
+//    public function findOneBySomeField($value): ?Task
 //    {
 //        return $this->createQueryBuilder('t')
 //            ->andWhere('t.exampleField = :val')

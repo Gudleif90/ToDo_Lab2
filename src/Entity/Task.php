@@ -15,9 +15,11 @@ class Task
     private ?int $id = null;
 
     #[ORM\Column(length: 255)]
+    
+
     private ?string $name = null;
 
-    #[ORM\Column(length: 255, nullable: true)]
+    #[ORM\Column(type: Types::TEXT, nullable: true)]
     private ?string $description = null;
 
     #[ORM\Column]
@@ -28,7 +30,7 @@ class Task
 
     #[ORM\ManyToOne(inversedBy: 'tasks')]
     #[ORM\JoinColumn(nullable: false)]
-    private ?Categoryv2 $category = null;
+    private ?Category $category = null;
 
     public function getId(): ?int
     {
@@ -52,7 +54,7 @@ class Task
         return $this->description;
     }
 
-    public function setDescription(?string $description): static
+    public function setDescription(string $description): static
     {
         $this->description = $description;
 
