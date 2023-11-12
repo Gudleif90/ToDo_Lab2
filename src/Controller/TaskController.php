@@ -18,6 +18,8 @@ use Symfony\Component\Routing\Annotation\Route;
 class TaskController extends AbstractController
 {
     #[Route('/create', name: 'create')]
+    #[IsGranted("ROLE_USER")]
+
     public function index(Request $request, EntityManagerInterface $entityManager): Response
     {
         $task = new Task;
